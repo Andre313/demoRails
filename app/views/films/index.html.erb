@@ -1,0 +1,9 @@
+<h1>Voici la liste de mes films préférés :</h1>
+<% @mesFilms.each do |film| %>
+	<p><%= film.titre %></p>
+<% end %>
+
+<%= form_tag "/films", method: "post" do %>
+	<input type="string" name="titre">
+	<input type="submit" value="ajouter à la liste">
+<% end %>
