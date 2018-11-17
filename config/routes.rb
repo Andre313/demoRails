@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/films/:id' => 'films#show'
   patch 'films/:id' => 'films#update'
   post '/films' => 'films#ajout'
+  delete '/films/:id' => 'films#destroy'
 
 end

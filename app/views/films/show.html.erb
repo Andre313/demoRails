@@ -1,9 +1,16 @@
-<h1>Voici le livre que vous avez demandé :</h1>
-<p><%= @le_film.titre %></p>
+<h1>Voici le film que vous avez demandé :</h1>
+<p> <%= @le_film.titre %> </p>
 
+<!-- formulaire de modification -->
 <%= form_tag "/films/#{@le_film.id}", method: "patch" do %>
 	<input type="string" name="titre">
 	<input type="submit" value="modifier le film">
 <% end %>
+
+<!-- formulaire de modification -->
+<%= form_tag "/films/#{@le_film.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer le film" />
+<% end %>
+
 
 <p><a href="/films"> ==>Revenir à la liste des films</a></p>

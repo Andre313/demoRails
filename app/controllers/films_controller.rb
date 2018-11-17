@@ -16,7 +16,12 @@ class FilmsController < ApplicationController
   	@le_film = Film.find(params[:id])
   	@le_film.titre = params[:titre]
   	@le_film.save
-  	redirect_to '/films/@le_film.id'
+  	redirect_to "/films/#{params[:id]}"
+  end
+
+  def destroy
+  	Film.find(params[:id]).destroy
+  	redirect_to '/films'
   end
 
 end
